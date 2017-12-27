@@ -87,7 +87,7 @@ ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=NRVAAGDX
+DocumentUniqueId=WAXRMEAC
 
 [Document4]
 DocumentPath=LED3216.PcbLib
@@ -104,7 +104,7 @@ ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=IRVPLANO
+DocumentUniqueId=UPWCAHVC
 
 [Document5]
 DocumentPath=..\cherry÷·‘™º˛ø‚\Œ¿–«÷·.PcbLib
@@ -121,7 +121,7 @@ ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=MOQYANLR
+DocumentUniqueId=EJHBTYAL
 
 [Document6]
 DocumentPath=DIY_BLE_Keyboard.SchDoc
@@ -224,6 +224,10 @@ ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=CLLMOBHP
+
+[GeneratedDocument1]
+DocumentPath=Project Outputs for DIY_BLE_Keyboard\Design Rule Check - BLE_KB.html
+DItemRevisionGUID=
 
 [Configuration1]
 Name=Sources
