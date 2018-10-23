@@ -1,0 +1,412 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+		h1, h2, h3, h4, h5, h6 {
+			font-family : segoe ui;
+			color : black;
+			background-color : #EDE7D9;
+			padding: 0.3em;
+		}
+
+		h1 {
+			font-size: 1.2em;
+		}		
+
+		h2 {
+			font-size: 1.2em;
+		}
+
+		body {
+			font-family : segoe ui;
+		}
+
+		td, th {
+			padding: 0.5em;
+			text-align : left;
+			width: 10em;
+		}
+		th {
+			background-color : #EEEEEE;
+
+		}
+		th.column1, td.column1 {
+			text-align: left;
+			width : auto;
+		}
+		table {
+			width : 100%;
+			font-size: 0.9em;
+		}
+
+		.DRC_summary_header {
+			padding-bottom : 0.1em;
+			border : 0px solid black;
+			width: 100%;
+			align: left;
+		}
+
+		.DRC_summary_header_col1,
+		.DRC_summary_header_col2, 
+		.DRC_summary_header_col3 {
+			color : black;
+			font-size:100%;
+			padding : 0em;
+			padding-top : 0.2em;
+			padding-bottom 0.2em;
+			border : 0px solid black;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.DRC_summary_header_col1 {
+			font-weight: bold;
+			width: 8em;
+		}
+
+		.DRC_summary_header_col2 {
+			width: 0.1em;
+		
+		}
+
+		.DRC_summary_header_col3 {
+			width : auto;
+		}
+
+		.header_holder {
+		    Width = 100%;
+		    border = 0px solid green;
+		    padding = 0;
+		}
+
+
+		.front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3
+		{
+			left : 0;
+			top : 0;
+			padding: 0em;
+			padding-top : 0.1em;
+			border : 0px solid black;
+			width : 100%;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.front_matter_column1 {
+			width : 8em;
+			font-weight: bold;
+		}
+
+		.front_matter_column2 {
+			width: 0.1em;
+		}
+
+		.front_matter_column3 {
+			width : auto;
+		}
+
+		.total_column1, .total_column {
+			font-weight : bold;
+		}
+		.total_column1 {
+			text-align : left;
+		}
+		.warning, .error {
+			color : red;
+			font-weight : bold;
+		}
+		tr.onmouseout_odd {
+			background-color : #white;
+		}
+		tr.onmouseout_even { 
+			background-color : #FAFAFA;
+		}
+		tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : #EEEEEE;
+		} 
+		a:link, a:visited, .q a:link,.q a:active,.q {
+			color: #21489e; 
+		}
+		a:link.callback, a:visited.callback { 
+			color: #21489e;
+		}
+		a:link.customize, a:visited.customize {
+			color: #C0C0C0;
+			position: absolute; 
+			right: 10px;
+		}	
+		p.contents_level1 {
+			font-weight : bold;
+			font-size : 110%;
+			margin : 0.5em;
+		}
+		p.contents_level2 {
+			position : relative;
+			left : 20px;
+			margin : 0.5em;
+		}
+	</style><script type="text/javascript">
+		function coordToMils(coord) {
+			var number = coord / 10000;
+			
+			if (number != number.toFixed(3))
+				number = number.toFixed(3);
+
+			return number + 'mil'
+		}
+
+		function coordToMM(coord) {
+			var number = 0.0254 * coord / 10000;
+			
+			if (number != number.toFixed(4))
+				number = number.toFixed(4);
+			
+			return number + 'mm'
+		}
+	
+		function convertCoord(coordNode, units) {
+			for (var i = 0; i < coordNode.childNodes.length; i++) {
+				coordNode.removeChild(coordNode.childNodes[i]);
+			}
+
+			var coord = coordNode.getAttribute('value');
+			if (coord != null) {
+				if (units == 'mm') {
+					textNode = document.createTextNode(coordToMM(coord));
+					coordNode.appendChild(textNode);
+				} else if (units == 'mil') {
+					textNode = document.createTextNode(coordToMils(coord));		
+					coordNode.appendChild(textNode);	
+				}
+			}
+		}
+	
+		function convertUnits(unitNode, units) {
+			for (var i = 0; i < unitNode.childNodes.length; i++) {
+				unitNode.removeChild(unitNode.childNodes[i]);		
+			}
+		
+			textNode = document.createTextNode(units); 
+			unitNode.appendChild(textNode);
+		}
+	
+		function changeUnits(radio_input, units) {
+			if (radio_input.checked) {
+			
+				var elements = document.getElementsByName('coordinate');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertCoord(elements[i], units);
+					}
+				}
+	
+				var elements = document.getElementsByName('units');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertUnits(elements[i], units);
+					}
+				}
+			}
+		}
+	</script><title>Design Rule Verification Report</title>
+</head>
+<body onload=""><img ALT="Altium" src="
+			file://C:\Users\Public\Documents\Altium\AD16\Templates\AD_logo.png
+		"><h1>Design Rule Verification Report</h1>
+<table class="header_holder">
+<td class="column1">
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">2017/12/28</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">12:18:46</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">00:00:03</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3"><a href="file:///C:\Woody\AD Projects\BLE_Keyboard\BLE_KB.PcbDoc" class="file"><acronym title="C:\Woody\AD Projects\BLE_Keyboard\BLE_KB.PcbDoc">C:\Woody\AD Projects\BLE_Keyboard\BLE_KB.PcbDoc</acronym></a></td>
+</tr>
+</table>
+</td>
+<td class="column2">
+<table class="DRC_summary_header">
+<tr>
+<td class="DRC_summary_header_col1">Warnings:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3">0</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">Rule Violations:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3" style="color : red">20</td></tr>
+</table>
+</td>
+</table><a name="IDZ30RI0KT21KRCS1MLWJE4XXXDZL1R1ZDG44MIFI20QE5FQP5JPB"><h2>Summary</h2></a><table>
+<tr>
+<th class="column1">Warnings</th>
+<th class="column2">Count</th>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">0</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">Rule Violations</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID0LTZAOCRPEKPJIXYCUP2EBBYRPG0ZY2DYIQ05EMPQH3CTBFZEGBL">Clearance Constraint (Gap=0.45mm) (InNet('NetC6_1')),(All)</a></td>
+<td class="column2">9</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDJV2O4QSEHWMOOBZSBGYJI2MV5UAACBKER223ENJ0ORVXYWDCIUB">Clearance Constraint (Gap=0.45mm) (InNet('NetC7_1')),(All)</a></td>
+<td class="column2">5</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID1IJORK1U3EEVOZUQWKHOHUBKCGX0SOOHE0D3YFEON4U3UZYNJCK">Clearance Constraint (Gap=0.45mm) (InNet('NetA1_1')),(All)</a></td>
+<td class="column2">5</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDRLO032FXNBJXO01SM1403IDNPWOLQQKOOHUT4H3TWQJDSBISX3L">Short-Circuit Constraint (Allowed=No) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDQ4HFCYZQZJZSIR0PACCL3QDCFP2YOMOEIPU5TRDCTPT3LYZ2XCGP">Un-Routed Net Constraint ( (All) )</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDLHO5YSX5IG4GMVVDRQISHEABUPWGMGJRICYQNBS403RZQA0KLQG">Clearance Constraint (Gap=0.178mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDR5GUO3HPRT1EK4NWVGA2BPXOFF4F3MPHUP0VBGFAYJLJXBARK05E">Power Plane Connect Rule(Relief Connect )(Expansion=0.508mm) (Conductor Width=0.254mm) (Air Gap=0.254mm) (Entries=4) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDJVT3SPHSYBFDH2P2JTY5QY4WEIF4ZAFZXQNUAEJ31G2MENFC3NRB">Width Constraint (Min=0.254mm) (Max=2.54mm) (Preferred=0.254mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDIOARLBCJY0AVNINTOP2NUEYGAOAQDIJXMS0CYHKOO2L2ZTYE1ISC">Height Constraint (Min=0mm) (Max=25.4mm) (Prefered=12.7mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDSYYZLMZHQBQYKSWXBCGUSAILGL014Y1OKH5EJXMMXC1KUVEM4FLE">Hole Size Constraint (Min=0.025mm) (Max=10.16mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDLRQD5XE1V5BYM1MANJXEGNHMMFX5R2ETDNEXCFOUXMRZUAYNAUJB">Hole To Hole Clearance (Gap=0.254mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID5CGVVM3IY0F0PAIIDIA3NHNZ5MF2IXLYTT5Z5SEIVVLCDH5R4FAI">Minimum Solder Mask Sliver (Gap=0mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDRZRWGYN23M35DGG1ZIA5YGHXHHI223V0JRDYSWFVU24ZC2ZAXR1D">Silk To Solder Mask (Clearance=0mm) (IsPad),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDZZ4ZPGSNHNMHO5ESQFFUJ3AONENCFB2P5RVEMICGBUNGDU10KO0G">Silk to Silk (Clearance=0mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID0H3XNHYEKIIDITYZQ1PCN3XE3H3SPPORCO4AYFL3HUT2HKKLHLKI">Net Antennae (Tolerance=0mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDF0S1KGGBJVOGOXPQO3CG2A2WHBSWE1YG0C5VYPNIO1HI5XBICLB">Modified Polygon (Allow modified: No), (Allow shelved: No)</a></td>
+<td class="column2">1</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">20</td>
+</tr>
+</table><br><a name="ID0LTZAOCRPEKPJIXYCUP2EBBYRPG0ZY2DYIQ05EMPQH3CTBFZEGBL"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Clearance Constraint (Gap=0.45mm) (InNet('NetC6_1')),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Woody\AD Projects\BLE_Keyboard\BLE_KB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=13777.485mil|Location2.X=13796.452mil|Location1.Y=2748.942mil|Location2.Y=2767.909mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Woody\AD Projects\BLE_Keyboard\BLE_KB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=13777.485mil|Location2.X=13796.452mil|Location1.Y=2748.942mil|Location2.Y=2767.909mil|Absolute=True">Clearance Constraint: (0.2mm &lt; 0.45mm) Between Pad IC1-37(325.309mm,44.199mm) on Bottom Layer And Pad IC1-38(325.309mm,43.699mm) on Bottom Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Woody\AD Projects\BLE_Keyboard\BLE_KB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=13781.422mil|Location2.X=13800.389mil|Location1.Y=2749.395mil|Location2.Y=2768.361mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Woody\AD Projects\BLE_Keyboard\BLE_KB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=13781.422mil|Location2.X=13800.389mil|Location1.Y=2749.395mil|Location2.Y=2768.361mil|Absolute=True">Clearance Constraint: (0.223mm &lt; 0.45mm) Between Track (325.159mm,44.199mm)(329.562mm,44.199mm) on Bottom Layer And Pad IC1-38(325.309mm,43.699mm) on Bottom Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Woody\AD Projects\BLE_Keyboard\BLE_KB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=13768.135mil|Location2.X=13792.351mil|Location1.Y=2768.135mil|Location2.Y=2793.276mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Woody\AD Projects\BLE_Keyboard\BLE_KB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=13768.135mil|Location2.X=13792.351mil|Location1.Y=2768.135mil|Location2.Y=2793.276mil|Absolute=True">Clearance Constraint: (0.372mm &lt; 0.45mm) Between Pad IC1-37(325.309mm,44.199mm) on Bottom Layer And Pad IC1-36(324.584mm,44.924mm) on Bottom Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Woody\AD Projects\BLE_Keyboard\BLE_KB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=13781.422mil|Location2.X=13800.389mil|Location1.Y=2748.489mil|Location2.Y=2767.456mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Woody\AD Projects\BLE_Keyboard\BLE_KB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=13781.422mil|Location2.X=13800.389mil|Location1.Y=2748.489mil|Location2.Y=2767.456mil|Absolute=True">Clearance Constraint: (0.223mm &lt; 0.45mm) Between Track (325.159mm,43.699mm)(326.823mm,43.699mm) on Bottom Layer And Pad IC1-37(325.309mm,44.199mm) on Bottom Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Woody\AD Projects\BLE_Keyboard\BLE_KB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=13943.517mil|Location2.X=13962.483mil|Location1.Y=2740.517mil|Location2.Y=2759.483mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Woody\AD Projects\BLE_Keyboard\BLE_KB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=13943.517mil|Location2.X=13962.483mil|Location1.Y=2740.517mil|Location2.Y=2759.483mil|Absolute=True">Clearance Constraint: (0.406mm &lt; 0.45mm) Between Pad C6-1(329.581mm,44.218mm) on Bottom Layer And Pad C6-2(329.581mm,43.252mm) on Bottom Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Woody\AD Projects\BLE_Keyboard\BLE_KB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=14054.517mil|Location2.X=14073.483mil|Location1.Y=2747.517mil|Location2.Y=2766.483mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Woody\AD Projects\BLE_Keyboard\BLE_KB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=14054.517mil|Location2.X=14073.483mil|Location1.Y=2747.517mil|Location2.Y=2766.483mil|Absolute=True">Clearance Constraint: (0.406mm &lt; 0.45mm) Between Pad L1-2(332.578mm,44.218mm) on Bottom Layer And Pad L1-1(331.613mm,44.218mm) on Bottom Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Woody\AD Projects\BLE_Keyboard\BLE_KB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=14024.517mil|Location2.X=14043.483mil|Location1.Y=2779.296mil|Location2.Y=2798.263mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Woody\AD Projects\BLE_Keyboard\BLE_KB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=14024.517mil|Location2.X=14043.483mil|Location1.Y=2779.296mil|Location2.Y=2798.263mil|Absolute=True">Clearance Constraint: (0.395mm &lt; 0.45mm) Between Polygon Region (334 hole(s)) Bottom Layer And Pad L1-1(331.613mm,44.218mm) on Bottom Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Woody\AD Projects\BLE_Keyboard\BLE_KB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=13781.422mil|Location2.X=13800.389mil|Location1.Y=2748.942mil|Location2.Y=2767.908mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Woody\AD Projects\BLE_Keyboard\BLE_KB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=13781.422mil|Location2.X=13800.389mil|Location1.Y=2748.942mil|Location2.Y=2767.908mil|Absolute=True">Clearance Constraint: (0.246mm &lt; 0.45mm) Between Track (325.159mm,44.199mm)(329.562mm,44.199mm) on Bottom Layer And Track (325.159mm,43.699mm)(326.823mm,43.699mm) on Bottom Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Woody\AD Projects\BLE_Keyboard\BLE_KB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=13846.934mil|Location2.X=13865.9mil|Location1.Y=2748.942mil|Location2.Y=2767.908mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Woody\AD Projects\BLE_Keyboard\BLE_KB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=13846.934mil|Location2.X=13865.9mil|Location1.Y=2748.942mil|Location2.Y=2767.908mil|Absolute=True">Clearance Constraint: (0.246mm &lt; 0.45mm) Between Track (325.159mm,44.199mm)(329.562mm,44.199mm) on Bottom Layer And Track (326.823mm,43.699mm)(328.946mm,41.576mm) on Bottom Layer </acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDJV2O4QSEHWMOOBZSBGYJI2MV5UAACBKER223ENJ0ORVXYWDCIUB"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Clearance Constraint (Gap=0.45mm) (InNet('NetC7_1')),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Woody\AD Projects\BLE_Keyboard\BLE_KB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=14143.517mil|Location2.X=14162.483mil|Location1.Y=2740.517mil|Location2.Y=2759.483mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Woody\AD Projects\BLE_Keyboard\BLE_KB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=14143.517mil|Location2.X=14162.483mil|Location1.Y=2740.517mil|Location2.Y=2759.483mil|Absolute=True">Clearance Constraint: (0.406mm &lt; 0.45mm) Between Pad C7-1(334.661mm,44.218mm) on Bottom Layer And Pad C7-2(334.661mm,43.252mm) on Bottom Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Woody\AD Projects\BLE_Keyboard\BLE_KB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=14260.202mil|Location2.X=14279.168mil|Location1.Y=2747.517mil|Location2.Y=2766.483mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Woody\AD Projects\BLE_Keyboard\BLE_KB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=14260.202mil|Location2.X=14279.168mil|Location1.Y=2747.517mil|Location2.Y=2766.483mil|Absolute=True">Clearance Constraint: (0.406mm &lt; 0.45mm) Between Pad L2-2(337.803mm,44.218mm) on Bottom Layer And Pad L2-1(336.837mm,44.218mm) on Bottom Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Woody\AD Projects\BLE_Keyboard\BLE_KB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=14230.202mil|Location2.X=14249.168mil|Location1.Y=2779.875mil|Location2.Y=2798.841mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Woody\AD Projects\BLE_Keyboard\BLE_KB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=14230.202mil|Location2.X=14249.168mil|Location1.Y=2779.875mil|Location2.Y=2798.841mil|Absolute=True">Clearance Constraint: (0.425mm &lt; 0.45mm) Between Polygon Region (334 hole(s)) Bottom Layer And Pad L2-1(336.837mm,44.218mm) on Bottom Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Woody\AD Projects\BLE_Keyboard\BLE_KB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=14259.359mil|Location2.X=14278.326mil|Location1.Y=2759.517mil|Location2.Y=2778.483mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Woody\AD Projects\BLE_Keyboard\BLE_KB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=14259.359mil|Location2.X=14278.326mil|Location1.Y=2759.517mil|Location2.Y=2778.483mil|Absolute=True">Clearance Constraint: (0.449mm &lt; 0.45mm) Between Track (336.82mm,44.218mm)(336.82mm,44.218mm) on Bottom Layer And Pad L2-2(337.803mm,44.218mm) on Bottom Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Woody\AD Projects\BLE_Keyboard\BLE_KB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=14062.517mil|Location2.X=14081.483mil|Location1.Y=2779.296mil|Location2.Y=2798.263mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Woody\AD Projects\BLE_Keyboard\BLE_KB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=14062.517mil|Location2.X=14081.483mil|Location1.Y=2779.296mil|Location2.Y=2798.263mil|Absolute=True">Clearance Constraint: (0.395mm &lt; 0.45mm) Between Polygon Region (334 hole(s)) Bottom Layer And Pad L1-2(332.578mm,44.218mm) on Bottom Layer </acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="ID1IJORK1U3EEVOZUQWKHOHUBKCGX0SOOHE0D3YFEON4U3UZYNJCK"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Clearance Constraint (Gap=0.45mm) (InNet('NetA1_1')),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Woody\AD Projects\BLE_Keyboard\BLE_KB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=14338.517mil|Location2.X=14357.483mil|Location1.Y=2740.517mil|Location2.Y=2759.483mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Woody\AD Projects\BLE_Keyboard\BLE_KB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=14338.517mil|Location2.X=14357.483mil|Location1.Y=2740.517mil|Location2.Y=2759.483mil|Absolute=True">Clearance Constraint: (0.406mm &lt; 0.45mm) Between Pad C8-1(339.614mm,44.218mm) on Bottom Layer And Pad C8-2(339.614mm,43.252mm) on Bottom Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Woody\AD Projects\BLE_Keyboard\BLE_KB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=14350.517mil|Location2.X=14369.483mil|Location1.Y=2741.017mil|Location2.Y=2759.983mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Woody\AD Projects\BLE_Keyboard\BLE_KB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=14350.517mil|Location2.X=14369.483mil|Location1.Y=2741.017mil|Location2.Y=2759.983mil|Absolute=True">Clearance Constraint: (0.432mm &lt; 0.45mm) Between Track (339.614mm,44.218mm)(339.614mm,44.218mm) on Bottom Layer And Pad C8-2(339.614mm,43.252mm) on Bottom Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Woody\AD Projects\BLE_Keyboard\BLE_KB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=14268.202mil|Location2.X=14287.168mil|Location1.Y=2779.875mil|Location2.Y=2798.841mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Woody\AD Projects\BLE_Keyboard\BLE_KB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=14268.202mil|Location2.X=14287.168mil|Location1.Y=2779.875mil|Location2.Y=2798.841mil|Absolute=True">Clearance Constraint: (0.425mm &lt; 0.45mm) Between Polygon Region (334 hole(s)) Bottom Layer And Pad L2-2(337.803mm,44.218mm) on Bottom Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Woody\AD Projects\BLE_Keyboard\BLE_KB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=14537.317mil|Location2.X=14564.315mil|Location1.Y=2730.157mil|Location2.Y=2756.831mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Woody\AD Projects\BLE_Keyboard\BLE_KB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=14537.317mil|Location2.X=14564.315mil|Location1.Y=2730.157mil|Location2.Y=2756.831mil|Absolute=True">Clearance Constraint: (0.421mm &lt; 0.45mm) Between Area Fill (338.476mm,37.792mm) (348.654mm,39.075mm) on Bottom Layer And Track (344.436mm,44.225mm)(345.233mm,43.389mm) on Bottom Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Woody\AD Projects\BLE_Keyboard\BLE_KB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=14636.524mil|Location2.X=14655.49mil|Location1.Y=2645.698mil|Location2.Y=2664.664mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Woody\AD Projects\BLE_Keyboard\BLE_KB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=14636.524mil|Location2.X=14655.49mil|Location1.Y=2645.698mil|Location2.Y=2664.664mil|Absolute=True">Clearance Constraint: (0mm &lt; 0.45mm) Between Area Fill (343.393mm,36.83mm) (352.574mm,39.039mm) on Bottom Layer And Area Fill (345.7mm,41.347mm) (346.899mm,42.506mm) on Bottom Layer </acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDF0S1KGGBJVOGOXPQO3CG2A2WHBSWE1YG0C5VYPNIO1HI5XBICLB"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Modified Polygon (Allow modified: No), (Allow shelved: No)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Woody\AD Projects\BLE_Keyboard\BLE_KB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=989.37mil|Location2.X=14755.63mil|Location1.Y=1028.147mil|Location2.Y=5903.15mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Woody\AD Projects\BLE_Keyboard\BLE_KB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=989.37mil|Location2.X=14755.63mil|Location1.Y=1028.147mil|Location2.Y=5903.15mil|Absolute=True">Modified Polygon: Polygon Not Repour After Edit  (Bottom Layer-No Net) on Bottom Layer </acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br></body>
+</html>

@@ -1,0 +1,22 @@
+﻿Field=#~Integer~#~50|Field=Comment~String~Comment~145|Field=Description~String~Description~186|Field=Designator~String~Designator~132|Field=Footprint~String~Footprint~148|Field=Value~String~Value~35|Field=Quantity~Integer~Quantity~39|ReportField=Currency~<none>|ReportField=ProductionQuantity~1|ReportField=ProjectFileName~DIY_BLE_Keyboard.PrjPcb|ReportField=ProjectFullPath~C:\Woody\AD Projects\BLE_Keyboard\DIY_BLE_Keyboard.PrjPcb|ReportField=Title~Bill of Materials For Project [DIY_BLE_Keyboard.PrjPcb] (No PCB Document Selected)|ReportField=TotalQuantity~119|ReportField=ReportTime~13:06:39|ReportField=ReportDate~2017/12/28|ReportField=ReportDateTime~2017/12/28 13:06:39|ReportField=OutputName~Bill of Materials|ReportField=OutputType~BOM_PartType|ReportField=GeneratorName~BOM|ReportField=GeneratorDescription~Bill of Materials|ReportField=VariantName~None|ReportField=Address1~|ReportField=Address2~|ReportField=Address3~|ReportField=Address4~|ReportField=Application_BuildNumber~|ReportField=ApprovedBy~|ReportField=Author~|ReportField=CheckedBy~|ReportField=CompanyName~|ReportField=CurrentDate~2017/12/28|ReportField=CurrentTime~13:02:43|ReportField=Date~|ReportField=DocumentFullPathAndName~C:\Woody\AD Projects\BLE_Keyboard\BLE_MCU.SchDoc|ReportField=DocumentName~BLE_MCU.SchDoc|ReportField=DocumentNumber~|ReportField=DrawnBy~|ReportField=Engineer~|ReportField=ImagePath~|ReportField=ModifiedDate~2017/12/28|ReportField=Organization~|ReportField=ProjectName~DIY_BLE_Keyboard.PrjPcb|ReportField=Revision~|ReportField=Rule~|ReportField=SheetNumber~|ReportField=SheetTotal~|ReportField=Time~|ReportField=Title~|ReportField=DataSourceFileName~DIY_BLE_Keyboard.PrjPcb|ReportField=DataSourceFullPath~C:\Woody\AD Projects\BLE_Keyboard\DIY_BLE_Keyboard.PrjPcb
+1|Antenna||A1|ANT_IFA_TI_DN0007||1
+2|Cap|Capacitor|C1, C2|C603_4MOD|30pF|2
+3|Cap|Capacitor|C3, C4, C10|C603_4MOD|1uF|3
+4|Cap|Capacitor|C5|C603_4MOD|10uF|1
+5|Cap|Capacitor|C6, C7|C402_4MOD|1.5pF|2
+6|NC|Capacitor|C8|C402_4MOD|1.5pF|1
+7|Cap|Capacitor|C9|L0805_POWER_4MOD|10uF|1
+8|Cap|Capacitor|C11, C12, C13, C14|C603_4MOD|0.1uF|4
+9|LED2|Typical RED, GREEN, YELLOW, AMBER GaAs LED|D1, D2, D3|3.8mm||3
+10|TLSR8267F512ET48||IC1|CC26XX_QFN48(7X7)_0P5||1
+11|AMS1117-3.3|Voltage Regulator|IC2|SOT-223||1
+12|Inductor|Inductor|L1|L0402_4MOD|3.3nH|1
+13|Inductor|Inductor|L2|L0402_4MOD|0R|1
+14|Inductor|Inductor|L3, L4|L0805_POWER_4MOD|470R|2
+15|Micro USB|Header, 5-Pin|P1|MICROUSB||1
+16|Download|Header, 3-Pin|P2|SWS||1
+17|Battery|Header, 2-Pin|P3|HDR1X2||1
+18|Res1|Resistor|R1, R2, R3|L0805_POWER_4MOD|560|3
+19|Res1|Resistor|R4|L0805_POWER_4MOD|1R|1
+20|SW-PB|Switch|S1, S2, S3, S4, S5, S6, S7, S8, S9, S10, S11, S12, S13, S14, S15, S16, S17, S18, S19, S20, S21, S22, S23, S24, S25, S26, S27, S28, S29, S30, S31, S32, S33, S34, S35, S36, S37, S38, S39, S40, S41, S42, S43, S44, S45, S46, S47, S48, S49, S50, S51, S52, S53, S54, S55, S56, S57, S58, S59, S60, S61, S62, S63, S64, S65, S66, S67, S68, S69, S70, S71, S72, S73, S74, S75, S76, S77, S78, S79, S80, S81, S82, S83, S84, S85, S86, S87|MX_SW-4||87
+21|XTAL|Crystal Oscillator|Y1|XTAL_SMD_3225(3.2X2.5)||1

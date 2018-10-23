@@ -1,0 +1,76 @@
+Protel Design System Design Rule Check
+PCB File : C:\Woody\AD Projects\BLE_Keyboard\BLE_KB.PcbDoc
+Date     : 2017/12/28
+Time     : 12:18:46
+
+Processing Rule : Clearance Constraint (Gap=0.45mm) (InNet('NetC6_1')),(All)
+   Violation between Clearance Constraint: (0.2mm < 0.45mm) Between Pad IC1-37(325.309mm,44.199mm) on Bottom Layer And Pad IC1-38(325.309mm,43.699mm) on Bottom Layer 
+   Violation between Clearance Constraint: (0.223mm < 0.45mm) Between Track (325.159mm,44.199mm)(329.562mm,44.199mm) on Bottom Layer And Pad IC1-38(325.309mm,43.699mm) on Bottom Layer 
+   Violation between Clearance Constraint: (0.372mm < 0.45mm) Between Pad IC1-37(325.309mm,44.199mm) on Bottom Layer And Pad IC1-36(324.584mm,44.924mm) on Bottom Layer 
+   Violation between Clearance Constraint: (0.223mm < 0.45mm) Between Track (325.159mm,43.699mm)(326.823mm,43.699mm) on Bottom Layer And Pad IC1-37(325.309mm,44.199mm) on Bottom Layer 
+   Violation between Clearance Constraint: (0.406mm < 0.45mm) Between Pad C6-1(329.581mm,44.218mm) on Bottom Layer And Pad C6-2(329.581mm,43.252mm) on Bottom Layer 
+   Violation between Clearance Constraint: (0.406mm < 0.45mm) Between Pad L1-2(332.578mm,44.218mm) on Bottom Layer And Pad L1-1(331.613mm,44.218mm) on Bottom Layer 
+   Violation between Clearance Constraint: (0.395mm < 0.45mm) Between Polygon Region (334 hole(s)) Bottom Layer And Pad L1-1(331.613mm,44.218mm) on Bottom Layer 
+   Violation between Clearance Constraint: (0.246mm < 0.45mm) Between Track (325.159mm,44.199mm)(329.562mm,44.199mm) on Bottom Layer And Track (325.159mm,43.699mm)(326.823mm,43.699mm) on Bottom Layer 
+   Violation between Clearance Constraint: (0.246mm < 0.45mm) Between Track (325.159mm,44.199mm)(329.562mm,44.199mm) on Bottom Layer And Track (326.823mm,43.699mm)(328.946mm,41.576mm) on Bottom Layer 
+Rule Violations :9
+
+Processing Rule : Clearance Constraint (Gap=0.45mm) (InNet('NetC7_1')),(All)
+   Violation between Clearance Constraint: (0.406mm < 0.45mm) Between Pad C7-1(334.661mm,44.218mm) on Bottom Layer And Pad C7-2(334.661mm,43.252mm) on Bottom Layer 
+   Violation between Clearance Constraint: (0.406mm < 0.45mm) Between Pad L2-2(337.803mm,44.218mm) on Bottom Layer And Pad L2-1(336.837mm,44.218mm) on Bottom Layer 
+   Violation between Clearance Constraint: (0.425mm < 0.45mm) Between Polygon Region (334 hole(s)) Bottom Layer And Pad L2-1(336.837mm,44.218mm) on Bottom Layer 
+   Violation between Clearance Constraint: (0.449mm < 0.45mm) Between Track (336.82mm,44.218mm)(336.82mm,44.218mm) on Bottom Layer And Pad L2-2(337.803mm,44.218mm) on Bottom Layer 
+   Violation between Clearance Constraint: (0.395mm < 0.45mm) Between Polygon Region (334 hole(s)) Bottom Layer And Pad L1-2(332.578mm,44.218mm) on Bottom Layer 
+Rule Violations :5
+
+Processing Rule : Clearance Constraint (Gap=0.45mm) (InNet('NetA1_1')),(All)
+   Violation between Clearance Constraint: (0.406mm < 0.45mm) Between Pad C8-1(339.614mm,44.218mm) on Bottom Layer And Pad C8-2(339.614mm,43.252mm) on Bottom Layer 
+   Violation between Clearance Constraint: (0.432mm < 0.45mm) Between Track (339.614mm,44.218mm)(339.614mm,44.218mm) on Bottom Layer And Pad C8-2(339.614mm,43.252mm) on Bottom Layer 
+   Violation between Clearance Constraint: (0.425mm < 0.45mm) Between Polygon Region (334 hole(s)) Bottom Layer And Pad L2-2(337.803mm,44.218mm) on Bottom Layer 
+   Violation between Clearance Constraint: (0.421mm < 0.45mm) Between Area Fill (338.476mm,37.792mm) (348.654mm,39.075mm) on Bottom Layer And Track (344.436mm,44.225mm)(345.233mm,43.389mm) on Bottom Layer 
+   Violation between Clearance Constraint: (0mm < 0.45mm) Between Area Fill (343.393mm,36.83mm) (352.574mm,39.039mm) on Bottom Layer And Area Fill (345.7mm,41.347mm) (346.899mm,42.506mm) on Bottom Layer 
+Rule Violations :5
+
+Processing Rule : Short-Circuit Constraint (Allowed=No) (All),(All)
+Rule Violations :0
+
+Processing Rule : Un-Routed Net Constraint ( (All) )
+Rule Violations :0
+
+Processing Rule : Clearance Constraint (Gap=0.178mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Power Plane Connect Rule(Relief Connect )(Expansion=0.508mm) (Conductor Width=0.254mm) (Air Gap=0.254mm) (Entries=4) (All)
+Rule Violations :0
+
+Processing Rule : Width Constraint (Min=0.254mm) (Max=2.54mm) (Preferred=0.254mm) (All)
+Rule Violations :0
+
+Processing Rule : Height Constraint (Min=0mm) (Max=25.4mm) (Prefered=12.7mm) (All)
+Rule Violations :0
+
+Processing Rule : Hole Size Constraint (Min=0.025mm) (Max=10.16mm) (All)
+Rule Violations :0
+
+Processing Rule : Hole To Hole Clearance (Gap=0.254mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Minimum Solder Mask Sliver (Gap=0mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Silk To Solder Mask (Clearance=0mm) (IsPad),(All)
+Rule Violations :0
+
+Processing Rule : Silk to Silk (Clearance=0mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Net Antennae (Tolerance=0mm) (All)
+Rule Violations :0
+
+Processing Rule : Modified Polygon (Allow modified: No), (Allow shelved: No)
+   Violation between Modified Polygon: Polygon Not Repour After Edit  (Bottom Layer-No Net) on Bottom Layer 
+Rule Violations :1
+
+
+Violations Detected : 20
+Time Elapsed        : 00:00:03
